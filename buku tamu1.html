@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buku Tamu Jurusan KGSP SMKN 2 Yogyakarta</title>
+    <link rel="stylesheet" href="indexcss.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="img/smk n2.jpg" alt="Logo SMKN 2 Yogyakarta" class="logo">
+            <div>
+                <h1>Jurusan KGSP</h1>
+                <p>SMKN 2 Yogyakarta</p>
+            </div>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="profil  jurusan.html">Profil Jurusan</a></li>
+            <li><a href="Album j.html">Album</a></li>
+            <li><a href="buku tamu1.html">Buku Tamu</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <div class="guestbook-container">
+            <h2 class="guestbook-title">Buku Tamu Jurusan KGSP</h2>
+            <form id="guestbookForm" class="guestbook-form">
+                <div class="form-group">
+                    <label for="name">Nama Lengkap</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="institution">Asal Institusi</label>
+                    <input type="text" id="institution" name="institution" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Nomor Telepon</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                
+                <div class="form-group full-width">
+                    <label for="purpose">Tujuan Kunjungan</label>
+                    <select id="purpose" name="purpose" required>
+                        <option value="">-- Pilih Tujuan --</option>
+                        <option value="study-tour">Study Tour</option>
+                        <option value="collaboration">Kolaborasi</option>
+                        <option value="information">Mencari Informasi</option>
+                        <option value="alumni">Alumni</option>
+                        <option value="other">Lainnya</option>
+                    </select>
+                </div>
+                
+                <div class="form-group full-width">
+                    <label for="message">Pesan/Kesan</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                
+                <div class="form-group full-width" style="text-align: center;">
+                    <button type="submit" class="submit-btn">Kirim Pesan</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Notifikasi -->
+    <div id="notification" class="notification">
+        Terima kasih atas pesan Anda! Kami akan segera merespon.
+    </div>
+    
+    <footer>
+        &copy; 2025 Jurusan KGSP SMKN 2 Yogyakarta
+    </footer>
+    
+    <script>
+        document.getElementById('guestbookForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Tampilkan notifikasi
+            const notification = document.getElementById('notification');
+            notification.style.display = 'block';
+            
+            // Reset form
+            this.reset();
+            
+            // Sembunyikan notifikasi setelah beberapa detik
+            setTimeout(() => {
+                notification.style.display = 'none';
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
